@@ -40,26 +40,32 @@
     <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
 </div>
 
-
+<h1>Update Recorde</h1>
 
     <div class="container d-flex w-25">
-    <form action="store" method="post">
+    <form action="/update" method="post">
         @csrf
+        @method("PUT")
+
+        
+            <input type="hidden" class="form-control" name="id" id="exampleInputTitle" value="{{$data->id}}" aria-describedby="emailHelp" placeholder="Title">
+         
+
         <div class="form-group">
           <label for="exampleInputTitle">Title</label>
-          <input type="text" class="form-control" name="title" id="exampleInputTitle" aria-describedby="emailHelp" placeholder="Title">
+          <input type="text" class="form-control" name="title" id="exampleInputTitle" value="{{$data->Book_Title}}" aria-describedby="emailHelp" placeholder="Title">
         </div>
         <div class="form-group">
             <label for="exampleInputAuther">Auther</label>
-            <input type="text" name="author" class="form-control"  id="exampleInputAuther" aria-describedby="emailHelp" placeholder="Auther">
+            <input type="text" name="author" class="form-control"  id="exampleInputAuther"  value="{{$data->Book_Author}}" aria-describedby="emailHelp" placeholder="Auther">
           </div>
           <div class="form-group">
             <label for="exampleInputTitle">description</label>
-            <input type="text" class="form-control" name="desc" id="exampleInputTitle" aria-describedby="emailHelp" placeholder="desc">
+            <input type="text" class="form-control" name="desc" id="exampleInputTitle" value="{{$data->Book_Description}}" aria-describedby="emailHelp" placeholder="desc">
           </div>
           <div class="form-group">
             <label for="exampleInputTitle">Book Image</label>
-            <input type="text" class="form-control" name="img" id="exampleInputTitle" aria-describedby="emailHelp" placeholder="img">
+            <input type="text" class="form-control" name="img" id="exampleInputTitle" value="{{$data->img}}" aria-describedby="emailHelp" placeholder="img">
           
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

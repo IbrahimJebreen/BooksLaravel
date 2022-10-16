@@ -21,7 +21,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="addBook">Link</a>
+                <a class="nav-link" href="addBook">Add New Book</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,8 +54,9 @@
           <h5 class="card-title">{{$book['Book_Title']}}</h5>
           <p class="card-text">{{$book['Book_Description']}}</p>
           <p class="card-text">{{$book['Book_Author']}}</p>
-          <a href="#" class="btn btn-danger">Delete</a>
-          <a href="#" class="btn btn-primary">Update</a>
+          <a href={{"delete/".$book['id']}} class="btn btn-danger" onclick="return confirm('Are you sure?')"
+          >Delete</a>
+          <a href={{"edit/".$book['id']}} class="btn btn-primary">Update</a>
         </div>
       </div>
       @endforeach
